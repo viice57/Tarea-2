@@ -4,7 +4,6 @@
 #include "list.h"
 
 typedef struct property property;
-typedef struct favourite favourite;
 
 property * createProperty(char readLine[]);
 

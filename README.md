@@ -3,7 +3,7 @@
 ## ①-. Cómo compilar y ejecutar la tarea
 * Para compilar la Tarea 2, es necesario abrir un nuevo terminal que admita gcc, y debemos apuntar específicamente a la carpeta /source/ de la tarea.
 * Una vez abierta la carpeta, utilizaremos los siguientes comandos:
-  * gcc -g main.c properties.c list.c hashmap.c menu.c -o Tarea2
+  * gcc -g hashmap.c list.c main.c menu.c properties.c -o Tarea2
   * ./Tarea2
 * El programa se inicia mostrando el menú de opciones realizado por nosotros; a lo que se debe indicar la opción "1" y "propiedades" como nombre de archivo, con tal permitir que el programa pueda ejecutarse con normalidad. Una vez importadas todas las propiedades, se puede indicar la opción que deseada.
   * Agregar propiedad
@@ -17,7 +17,7 @@
   * Exportar las propiedades hacia el archivo .CSV
 
 ## ②-. Las opciones que funcionan correctamente y las que no lo hacen indicando posibles causas
-#### Todas las opciones funcionan según lo que se solicita
+#### Todas las opciones funcionan según lo que se pidió
 ## ③-. Aspectos positivos y a mejorar por cada uno de los integrantes (coevaluación)
 * ####  *Vicente Morales:* /
   * ###### + Aporte de ideas, manejo de información, buena explicación y liderazgo

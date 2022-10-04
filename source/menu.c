@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include "../include/properties.h"
 #include "../include/menu.h"
 

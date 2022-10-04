@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../include/properties.h"
-#include "../include/hashmap.h"
 
 /* Estructura para asignar propiedades a listas y mapas */
 struct property {
