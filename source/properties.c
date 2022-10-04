@@ -239,11 +239,18 @@ void showByType(HashMap * mapTypes) {
 /* Función para mostrar propiedades por capacidad mínima */
 void showByCapacity(HashMap * mapIDs) {
   unsigned short flag = 1;
+  char capacity[3];
+  fflush(stdin);
+
+  /* Pedimos la ciudad */
+  printf("Ingrese capacidad mínima a buscar: ");
+  scanf("%3s", capacity);
+  getchar();
 
   /* Ciclo para recorrer el mapa IDs y obtener datos de las propiedades, hasta que no queden más*/
   for(Pair * newProperty = firstMap(mapIDs); newProperty != NULL; newProperty = nextMap(mapIDs)) {
     /* Preguntamos por las propiedades con capacidad "1" */
-    if(is_equal("1", ((property *) newProperty->value)->capacity)) {
+    if(is_equal(capacity, ((property *) newProperty->value)->capacity)) {
       printf("Propiedad %s\n", (char *) newProperty->key);
       printf("Ciudad: %s\n", ((property *) newProperty->value)->city);
       printf("Dirección: %s\n", ((property *) newProperty->value)->address);
