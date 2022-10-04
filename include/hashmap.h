@@ -18,6 +18,8 @@ typedef struct Pair {
 
 HashMap * createMap(long capacity);
 
+int is_equal(void* key1, void* key2);
+
 void insertMap(HashMap * table, char * key, void * value);
 
 void eraseMap(HashMap * table, char * key);

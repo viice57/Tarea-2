@@ -10,9 +10,9 @@ int enlarge_called = 0;
 
 struct HashMap {
   Pair ** buckets;
-  long size; //cantidad de datos/pairs en la tabla
-  long capacity; //capacidad de la tabla
-  long current; //indice del ultimo dato accedido
+  long size;
+  long capacity;
+  long current;
 };
 
 Pair * createPair(char * key, void * value) {

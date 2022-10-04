@@ -1,27 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-
 #include "../include/hashmap.h"
+#include "../include/list.h"
 #include "../include/menu.h"
 
 int main(void) {
-  int choice = -1; 
+  short choice = -1; 
+  
+  List * listProperties = createList();
+  HashMap * mapIDs = createMap(50);
+  HashMap * mapCities = createMap(50);
+  HashMap * mapTypes = createMap(50);
 
   do {
-		showMenu();
-
     fflush(stdin);
-		scanf("%i", &choice);
-		printf("\n");
     
-		/*if(choice > 1 && !firstMap(listItems)) {
+		showMenu();
+		scanf("%hu", &choice);
+		printf("\n");
+
+		if(choice > 1 && !firstList(listProperties)) {
       printf("No se ha abierto archivo alguno. Cerrando");
       break;
-    }*/
+    }
     
-		showChoice(choice);
+		showChoice(listProperties, mapIDs, mapCities, mapTypes, choice);
 	} while(choice != 0);
+
+  free(listProperties);
+  free(mapIDs);
+  free(mapCities);
+  free(mapTypes);
   
   return 0;
 }

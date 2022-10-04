@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <string.h>
-
 #include "../include/properties.h"
 #include "../include/menu.h"
 
 void showMenu() {
-  printf("\n%sMenu de opciones%s\n\n", "\x1B[1m", "\x1B[0m");
+  printf("\n%sMenú de opciones%s\n\n", "\x1B[1m", "\x1B[0m");
 
   printf("(1) Importar propiedades desde archivo .CSV\n");
   printf("(2) Agregar propiedad\n");
@@ -21,51 +20,45 @@ void showMenu() {
   printf("\nIndique la accion deseada (solo números): ");
 }
 
-void showChoice(int choice) {
+void showChoice(List * listProperties, HashMap * mapIDs, HashMap * mapCities, HashMap * mapTypes, short choice) {
   switch(choice) {
     case 0:
-      printf("Fin del programa.");
+      printf("*********************\n");
+  		printf("* Fin del programa. *\n");
+  		printf("*********************\n");
       break;
 		case 1:
-      importProperties();
-      
-      printf("***********************\n");
-  		printf("* ¡Archivo importado! *\n");
-  		printf("***********************\n");
+      importProperties(listProperties, mapIDs, mapCities, mapTypes);
   		break;
   	case 2:
-      //addProperty();
-      
-  		printf("***********************\n");
-  		printf("* ¡Propiedad agregada! *\n");
-  		printf("***********************\n");
+      addProperty(listProperties, mapIDs, mapCities, mapTypes);
   		break;
   	case 3:
-  		//showAllProperties();
+  		showByAll(mapIDs);
   		break;
   	case 4:
-  		//showByCity();
+  		showByCity(mapCities);
   		break;
   	case 5:
-      //showByType();
+  		showByType(mapTypes);
       break;
   	case 6:
-  		//showByCapacity();
+  		showByCapacity(mapIDs);
   		break;
   	case 7:
-      //addFavorite();
+      addFavourite(listProperties, mapIDs);
   		break;
   	case 8:
-  		//showMyFavorites();
+  		showMyFavourites(listProperties);
   		break;
   	case 9:
-  		//exportProperties();
+  		exportProperties(mapIDs);
   		break;
   	default:
   		printf("**************************************\n");
   		printf("* ¡No existe tal opcion, elija otra! *\n");
   		printf("**************************************\n");
   		break;
-		}
+	}
   printf("\n");
 }
